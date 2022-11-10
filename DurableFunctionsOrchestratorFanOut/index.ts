@@ -8,7 +8,12 @@ const orchestrator = df.orchestrator(function* (context) {
     parallelTasks.push(context.df.callActivity("Hello", workItem));
   }
 
-  yield context.df.Task.all(parallelTasks);
+  try {
+    yield context.df.Task.all(parallelTasks);
+  } catch (error) {
+    context.log(error);
+    throw error;
+  }
 
   return parallelTasks.map((task) => task.result);
 });

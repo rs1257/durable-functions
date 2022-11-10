@@ -6,10 +6,7 @@
       "type": "httpTrigger",
       "direction": "in",
       "route": "orchestrators/{functionName}",
-      "methods": [
-        "post",
-        "get"
-      ]
+      "methods": ["post", "get"]
     },
     {
       "name": "$return",
@@ -22,5 +19,5 @@
       "direction": "in"
     }
   ],
-  "scriptFile": "../dist/DurableFunctionsHttpStart1/index.js"
+  "scriptFile": "../dist/DurableFunctionsHttpStart/index.js"
 }
